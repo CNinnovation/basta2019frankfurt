@@ -5,7 +5,7 @@ namespace _03_SpanSample
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var x = new StackOnlyType();
             string s = x.ToString();
