@@ -13,7 +13,7 @@ namespace UsingDeclaraationSample
         static void Run1()
         {
             {
-                using var r = new Resource();
+                using var r = new Resource2();
                 r.Foo();
             }
             Console.WriteLine("next scope");
