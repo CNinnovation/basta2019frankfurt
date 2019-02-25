@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace RangesSample
 {
@@ -10,17 +9,6 @@ namespace RangesSample
             TheHatOperator();
             RangeWithStrings();
             RangesWithArrays();
-        }
-
-        private static void RangesWithArrays()
-        {
-            var arr = new[] { 1, 4, 8, 11, 19, 31 };
-            var range = arr[2..5];
-            ref int elt = ref range[1];
-            elt = 42;
-            int copiedelement = range[1];
-            copiedelement = 11;
-            Console.WriteLine($"the original element is changed: {arr[3]}");
         }
 
         private static void TheHatOperator()
@@ -54,6 +42,17 @@ namespace RangesSample
             string thequick = text1[..9]; // Range.ToEnd
 
             string completeString = text1[..]; // Range.All
+        }
+
+        private static void RangesWithArrays()
+        {
+            var arr = new[] { 1, 4, 8, 11, 19, 31 };
+            var range = arr[2..5];
+            ref int item = ref range[1];
+            item = 42;
+            int copiedelement = range[1];
+            copiedelement = 11;
+            Console.WriteLine($"the original element is changed: {arr[3]}");
         }
     }
 }
