@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UsingDeclaraationSample
+namespace UsingDeclarationSample
 {
     public class Resource : IDisposable
     {
@@ -8,7 +8,7 @@ namespace UsingDeclaraationSample
         public void Dispose() => Console.WriteLine("Resource.Dispose");
     }
 
-    public ref struct Resource2
+    public ref struct Resource2 // : IDisposable - ref structs cannot imlpement interfaces
     {
         public Resource2(int value1) => Value1 = value1;
 
