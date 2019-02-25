@@ -6,7 +6,7 @@ namespace AsyncStreamsSample
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static async Task Main()
         {
             var cts = new CancellationTokenSource();
             cts.CancelAfter(5000);

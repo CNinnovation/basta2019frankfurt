@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,9 +13,8 @@ namespace AsyncStreamsSample
             using (cancellationToken.Register(() => cancel = true))
             {
                 var r = new Random();
-                while (true)
+                while (!cancel)
                 {
-                    if (cancel) yield break;
                     await Task.Delay(r.Next(300));
                     yield return new SensorData()
                     {
@@ -24,6 +22,8 @@ namespace AsyncStreamsSample
                         Value2 = r.Next(100)
                     };
                 }
+                Console.WriteLine("cancel requested");
+                yield break;
             };
 
         }
