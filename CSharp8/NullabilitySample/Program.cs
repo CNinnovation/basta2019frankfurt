@@ -8,7 +8,7 @@ namespace NullabilitySample
         {
             var b1 = new Book("Professional C# 8");
 
-            Console.WriteLine(b1.Publisher.ToLower());
+            // Console.WriteLine(b1.Publisher!.ToLower());
             if (b1.Publisher != null)
             {
                 Console.WriteLine(b1.Publisher.ToLower());
