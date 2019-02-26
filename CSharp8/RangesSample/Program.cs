@@ -30,7 +30,7 @@ namespace RangesSample
             string lazyDogs2 = text1.Substring(text1.Length - 9, 9);
 
             string lazyDogs3 = text1[^9..^0];
-            var start = ^9;
+            var start = ^9; 
             var end = ^0;
             var range = Range.Create(start, end);
             // string lazyDogs4 = text1.Substring(range); missing with Preview 2
@@ -47,12 +47,13 @@ namespace RangesSample
         private static void RangesWithArrays()
         {
             var arr = new[] { 1, 4, 8, 11, 19, 31 };
-            var range = arr[2..5];
-            ref int item = ref range[1];
-            item = 42;
-            int copiedelement = range[1];
-            copiedelement = 11;
-            Console.WriteLine($"the original element is changed: {arr[3]}");
+            
+            var range = 2..5;
+            var slice = arr[range];
+            foreach (var item in slice)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
