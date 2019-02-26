@@ -8,13 +8,19 @@ namespace AsyncStreamsSample
     {
         static async Task Main()
         {
-            var cts = new CancellationTokenSource();
-            cts.CancelAfter(5000);
             var aDevice = new ADevice();
-            await foreach(var x in aDevice.GetSensorData(cts.Token))
+            await foreach (var x in aDevice.GetSensorData1())
             {
                 Console.WriteLine($"{x.Value1} {x.Value2}");
             }
+
+            //var cts = new CancellationTokenSource();
+            //cts.CancelAfter(5000);
+            //var aDevice = new ADevice();
+            //await foreach(var x in aDevice.GetSensorData(cts.Token))
+            //{
+            //    Console.WriteLine($"{x.Value1} {x.Value2}");
+            //}
             Console.WriteLine("finished");
         }
     }
