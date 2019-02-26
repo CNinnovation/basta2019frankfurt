@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28606.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncStreamsSample", "AsyncStreamsSample\AsyncStreamsSample.csproj", "{7E4F8D12-FB29-44BC-9852-A10E60B3820F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncStreamsSample", "AsyncStreamsSample\AsyncStreamsSample.csproj", "{62BFE7D0-D5CE-49B9-B6BE-4A7677A78D3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7E4F8D12-FB29-44BC-9852-A10E60B3820F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E4F8D12-FB29-44BC-9852-A10E60B3820F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E4F8D12-FB29-44BC-9852-A10E60B3820F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E4F8D12-FB29-44BC-9852-A10E60B3820F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62BFE7D0-D5CE-49B9-B6BE-4A7677A78D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62BFE7D0-D5CE-49B9-B6BE-4A7677A78D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62BFE7D0-D5CE-49B9-B6BE-4A7677A78D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62BFE7D0-D5CE-49B9-B6BE-4A7677A78D3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BCDDCC90-60FA-4316-8691-28B144B723AD}
+		SolutionGuid = {EF4B2AE7-FBB2-41C9-9BF1-F12B17F0E245}
 	EndGlobalSection
 EndGlobal

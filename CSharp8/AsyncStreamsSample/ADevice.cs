@@ -23,7 +23,6 @@ namespace AsyncStreamsSample
                     };
                 }
                 Console.WriteLine("cancel requested");
-                yield break;
             };
 
         }
