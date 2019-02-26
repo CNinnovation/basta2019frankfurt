@@ -13,8 +13,8 @@
 
         private static (int, int) GetCombinedSize(Shape shape1, Shape shape2)
         {
-            int combinedHeight = 0;
-            int combinedWidth = 0;
+            int combinedHeight;
+            int combinedWidth;
             if ((shape1.Position.y + shape1.Size.height) > shape2.Position.y)
             {
                 int delta = shape1.Position.y + shape1.Size.height - shape2.Position.y;

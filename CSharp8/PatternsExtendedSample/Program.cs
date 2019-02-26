@@ -18,7 +18,7 @@ namespace PatternsExtendedSample
 
             foreach (var shape in shapes)
             {
-                Console.WriteLine(M1(shape));
+                Console.WriteLine(M3(shape));
             }
         }
 
