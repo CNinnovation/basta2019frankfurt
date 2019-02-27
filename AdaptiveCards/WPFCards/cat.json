@@ -1,0 +1,16 @@
+{
+  "type": "AdaptiveCard",
+  "version": "1.1",
+  "body": [
+    {
+      "type": "TextBlock",
+      "size": "large",
+      "text": "Hello Card!"
+    },
+    {
+      "type": "Image",
+      "size": "large",
+      "url": "http://adaptivecards.io/content/cats/1.png"
+    }
+  ]
+}

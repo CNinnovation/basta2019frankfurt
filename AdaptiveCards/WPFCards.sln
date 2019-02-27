@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28606.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFCards", "WPFCards\WPFCards.csproj", "{1A23FE9B-CA93-47C2-9032-80B09728DA43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A23FE9B-CA93-47C2-9032-80B09728DA43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A23FE9B-CA93-47C2-9032-80B09728DA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A23FE9B-CA93-47C2-9032-80B09728DA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A23FE9B-CA93-47C2-9032-80B09728DA43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B81C44DB-785C-44FD-9BB9-268C0D7F5EA4}
+	EndGlobalSection
+EndGlobal
