@@ -10,8 +10,8 @@ namespace ArrayPoolSample
 
         static void Main()
         {
-          //  ArrayPool1();
-            UsingArrays(pool: false, collect: false);
+            ArrayPool1();
+            // UsingArrays(pool: true, collect: false);
         }
 
         public static void ArrayPool1()

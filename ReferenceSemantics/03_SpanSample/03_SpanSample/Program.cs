@@ -44,8 +44,9 @@ namespace _03_SpanSample
         {
             Console.WriteLine(nameof(ArraySample));
             int[] arr1 = Enumerable.Range(1, 100).ToArray();
-            var span1 = arr1.AsSpan();
-            var slice1 = span1.Slice(0, 10);
+            Span<int> span1 = arr1.AsSpan();
+            // var slice1 = span1.Slice(0, 10);
+            var slice1 = span1[8..15];
             for (int i = 0; i < slice1.Length; i++)
             {
                 slice1[i] += 100;

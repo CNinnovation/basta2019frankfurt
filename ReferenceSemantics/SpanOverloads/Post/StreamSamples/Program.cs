@@ -126,7 +126,7 @@ namespace StreamSamples
                     if (nread < BUFFERSIZE)
                     {
                         buffer.Slice(nread).Clear();
-//                        Array.Clear(buffer, nread, BUFFERSIZE - nread);
+                        // Array.Clear(buffer, nread, BUFFERSIZE - nread);
                     }
 
                     //                  string s = encoding.GetString(buffer, 0, nread);

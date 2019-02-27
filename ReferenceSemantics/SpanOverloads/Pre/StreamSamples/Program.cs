@@ -45,7 +45,6 @@ namespace StreamSamples
             Console.WriteLine("\t-r\tRandom Access Sample");
         }
 
-
         public static void RandomAccessSample()
         {
             try
