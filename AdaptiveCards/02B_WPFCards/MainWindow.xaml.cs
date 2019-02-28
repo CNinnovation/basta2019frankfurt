@@ -3,22 +3,10 @@ using AdaptiveCards.Rendering;
 using AdaptiveCards.Rendering.Wpf;
 using Microsoft.Win32;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WPF2Cards
 {
@@ -67,16 +55,17 @@ namespace WPF2Cards
             void OpenUrlAction(RenderedAdaptiveCard card, AdaptiveOpenUrlAction action)
             {
                 webBrowser.Navigate(action.Url.ToString());
-
             }
 
             AdaptiveCardRenderer renderer = new AdaptiveCardRenderer(_hostConfig);
             var version = renderer.SupportedSchemaVersion;
+            renderer.UseXceedElementRenderers();
+           
             var result = AdaptiveCard.FromJson(LoadJson());
             var renderedCard = renderer.RenderCard(result.Card);
-            renderedCard.OnAction += (RenderedAdaptiveCard card, AdaptiveActionEventArgs aea) =>
+            renderedCard.OnAction += (RenderedAdaptiveCard card, AdaptiveActionEventArgs args) =>
             {
-                switch (aea.Action)
+                switch (args.Action)
                 {
                     case AdaptiveSubmitAction submitAction:
                         ShowSubmitAction(card, submitAction);

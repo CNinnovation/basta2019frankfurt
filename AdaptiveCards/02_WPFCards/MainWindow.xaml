@@ -12,7 +12,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Button Click="OnShowCard">Show Card</Button>
+        <Button Click="OnShowCard" Margin="0,8" Padding="8" FontSize="24">Show Card</Button>
         <Grid Grid.Row="1" x:Name="grid1"></Grid>
         <WebBrowser Grid.Row="2" x:Name="webBrowser" />
     </Grid>

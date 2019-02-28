@@ -3,7 +3,6 @@ using AdaptiveCards.Rendering;
 using AdaptiveCards.Rendering.Wpf;
 using Microsoft.Win32;
 using Newtonsoft.Json;
-using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -29,7 +28,7 @@ namespace WPFCards
                 {
                     ShowCard =
                     {
-                        ActionMode = ShowCardActionMode.Popup
+                        ActionMode = ShowCardActionMode.Inline
                     }
                 }
             };
@@ -57,17 +56,15 @@ namespace WPFCards
             void OpenUrlAction(RenderedAdaptiveCard card, AdaptiveOpenUrlAction action)
             {
                 webBrowser.Navigate(action.Url.ToString());
-
             }
 
             AdaptiveCardRenderer renderer = new AdaptiveCardRenderer(_hostConfig);
             var version = renderer.SupportedSchemaVersion;
-            renderer.UseXceedElementRenderers();
             var result = AdaptiveCard.FromJson(await LoadJsonAsync());
             var renderedCard = renderer.RenderCard(result.Card);
-            renderedCard.OnAction += (RenderedAdaptiveCard card, AdaptiveActionEventArgs aea) =>
+            renderedCard.OnAction += (RenderedAdaptiveCard card, AdaptiveActionEventArgs args) =>
             {
-                switch (aea.Action)
+                switch (args.Action)
                 {
                     case AdaptiveSubmitAction submitAction:
                         ShowSubmitAction(card, submitAction);
@@ -96,14 +93,13 @@ namespace WPFCards
         
             if (picker.ShowDialog() == true)
             {
-                string json = await File.ReadAllTextAsync(picker.FileName);
-
-                return json;
+                return await File.ReadAllTextAsync(picker.FileName);
             }
             return string.Empty;
         }
     }
 
+    #region WebBrowser
     public static class WebBrowserExtensions
     {
         public static void SuppressScriptErrors(this WebBrowser webBrowser, bool hide)
@@ -118,4 +114,5 @@ namespace WPFCards
             objComWebBrowser.GetType().InvokeMember("Silent", BindingFlags.SetProperty, null, objComWebBrowser, new object[] { hide });
         }
     }
+    #endregion
 }
