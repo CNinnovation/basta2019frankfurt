@@ -15,7 +15,7 @@ namespace CreateACard
             var card = new AdaptiveCard(new AdaptiveSchemaVersion(1, 1));
             card.Body.Add(new AdaptiveTextBlock()
             {
-                Text = "Hello Card!",
+                Text = "Hello, Card!",
                 Size = AdaptiveTextSize.Large
             });
 
