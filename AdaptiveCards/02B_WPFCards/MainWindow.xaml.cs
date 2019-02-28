@@ -59,7 +59,7 @@ namespace WPF2Cards
 
             AdaptiveCardRenderer renderer = new AdaptiveCardRenderer(_hostConfig);
             var version = renderer.SupportedSchemaVersion;
-            renderer.UseXceedElementRenderers();
+            // renderer.UseXceedElementRenderers();
            
             var result = AdaptiveCard.FromJson(LoadJson());
             var renderedCard = renderer.RenderCard(result.Card);
