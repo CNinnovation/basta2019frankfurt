@@ -3,14 +3,24 @@ using AdaptiveCards.Rendering;
 using AdaptiveCards.Rendering.Wpf;
 using Microsoft.Win32;
 using Newtonsoft.Json;
-using System.Diagnostics;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-namespace WPFCards
+namespace WPF2Cards
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -35,7 +45,7 @@ namespace WPFCards
             };
         }
 
-        private async void OnShowCard(object sender, RoutedEventArgs e)
+        private void OnShowCard(object sender, RoutedEventArgs e)
         {
             void ShowSubmitAction(RenderedAdaptiveCard card, AdaptiveSubmitAction action)
             {
@@ -62,7 +72,7 @@ namespace WPFCards
 
             AdaptiveCardRenderer renderer = new AdaptiveCardRenderer(_hostConfig);
             var version = renderer.SupportedSchemaVersion;
-            var result = AdaptiveCard.FromJson(await LoadJsonAsync());
+            var result = AdaptiveCard.FromJson(LoadJson());
             var renderedCard = renderer.RenderCard(result.Card);
             renderedCard.OnAction += (RenderedAdaptiveCard card, AdaptiveActionEventArgs aea) =>
             {
@@ -85,18 +95,17 @@ namespace WPFCards
             grid1.Children.Add(renderedCard.FrameworkElement);
         }
 
-        private async Task<string> LoadJsonAsync()
+        private string LoadJson()
         {
             var picker = new OpenFileDialog
             {
                 DefaultExt = ".json",
                 Filter = "JSON Files (.json)|*.json"
             };
-        
+
             if (picker.ShowDialog() == true)
             {
-                string json = await File.ReadAllTextAsync(picker.FileName);
-
+                string json = File.ReadAllText(picker.FileName);
                 return json;
             }
             return string.Empty;
@@ -118,3 +127,4 @@ namespace WPFCards
         }
     }
 }
+
