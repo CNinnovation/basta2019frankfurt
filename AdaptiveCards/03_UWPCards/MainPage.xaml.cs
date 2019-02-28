@@ -39,7 +39,7 @@ namespace UWPCards
                 {
                     ShowCard =
                     {
-                        ActionMode = ActionMode.Popup
+                        ActionMode = ActionMode.Inline
                     }
                 }
             };
