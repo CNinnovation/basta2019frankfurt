@@ -34,22 +34,19 @@ namespace TimelineSample
 
         protected override void OnActivated(IActivatedEventArgs args)
         {
+            LoadFrame();
+
             if (args.Kind == ActivationKind.Protocol)
             {
                 if (args is ProtocolActivatedEventArgs uriArgs)
                 {
                     Frame rootFrame = Window.Current.Content as Frame;
-                   
+
+                    // TODO: navigate to corresponding pages based on the URI
+
+                    rootFrame.Navigate(typeof(MainPage));
+
                 }
-            //    var uriArgs = args as ProtocolActivatedEventArgs;
-            //    if (uriArgs != null)
-            //    {
-            //        Frame rootFrame = Window.Current.Content as Frame;
-            //        if (uriArgs..Host == "MainPage")
-            //{
-            //            rootFrame.Navigate(typeof(SecondaryPage), uriArgs)
-            //}
-//                }
 
             }
             Window.Current.Activate();
@@ -62,24 +59,11 @@ namespace TimelineSample
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
+            Frame rootFrame = LoadFrame();
 
-            // Do not repeat app initialization when the Window already has content,
-            // just ensure that the window is active
-            if (rootFrame == null)
+            if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
             {
-                // Create a Frame to act as the navigation context and navigate to the first page
-                rootFrame = new Frame();
-
-                rootFrame.NavigationFailed += OnNavigationFailed;
-
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                {
-                    //TODO: Load state from previously suspended application
-                }
-
-                // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
+                //TODO: Load state from previously suspended application
             }
 
             if (e.PrelaunchActivated == false)
@@ -94,6 +78,26 @@ namespace TimelineSample
                 // Ensure the current window is active
                 Window.Current.Activate();
             }
+        }
+
+        private Frame LoadFrame()
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            // Do not repeat app initialization when the Window already has content,
+            // just ensure that the window is active
+            if (rootFrame == null)
+            {
+                // Create a Frame to act as the navigation context and navigate to the first page
+                rootFrame = new Frame();
+
+                rootFrame.NavigationFailed += OnNavigationFailed;
+
+                // Place the frame in the current Window
+                Window.Current.Content = rootFrame;
+            }
+
+            return rootFrame;
         }
 
         /// <summary>

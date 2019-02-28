@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28606.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimelineSample", "TimelineSample.csproj", "{197FD36B-2CC1-4A9D-B680-7DF48D5CB474}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimelineSample", "04_TimelineSample\TimelineSample.csproj", "{197FD36B-2CC1-4A9D-B680-7DF48D5CB474}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
